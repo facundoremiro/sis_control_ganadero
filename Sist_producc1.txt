@@ -1,0 +1,32 @@
+#1. cargar animales con sus datos respectivos: id ,caravana, SENASA, sexo, peso, fecha, estado corporal, lote
+#1.1 dependiendo el sexo puede ser en machos: ternero de destete (entre 260 y 300kg), novillito (250 a 280 en 1 año y 340-380 promedio), novillo(>350-380), toro(descarte de recria, comprado por genetica, semental)
+#1.2 en hembras: ternera de destete (entre 250 y <300kg), vaquillona (1 año 330-350), vaca(>350-380) que puede ser madre(cria hasta peso de destete), preñada, descarte
+# cada peso y variables dependen del productor y lo que se va a cargar a la base de datos 
+#1.3 lote corresponde a que tipo de lote es, si es de cria(macimiento a destete), recria(destete a engorde), engorde o invernada(pastoreo o feedloot y tambien la terminacion donde se define el %graso).
+#1.4 estado corporal se define del 1 al 5 (siendo este el mas optimo y mejor salud del animal) y se define por el productor, veterinario o encargado de la hacienda.
+#2 distribuir segun pesos a los diferentes lotes, esto es manual o automatico dependiendo el productor, para ser automatico se deben definir los pesos de los animales.
+#3 cargar muestras pareadas al pasar de los meses para sacar el % de engorde en cada lote y ver si se puede mejorar la alimentacion o el manejo de los animales, para esto se debe definir un % de engorde optimo por lote y sexo.
+
+'''
+Version: 1.0
+Necesidad: guardar pesadas de animales por fecha, y poder comparar el aumento entre dos pesadas del mismo animal.
+Tabla animales: caravana, sexo, SENASA, lote
+Tabla pesadas: caravana (conecta con el animal), fecha, peso, estado_corporal
+Funciones necesarias:
+Cargar un animal nuevo
+Cargar una pesada (caravana + fecha + peso + estado corporal)
+Listar todas las pesadas de una caravana puntual
+Comparar dos pesadas de la misma caravana (peso nuevo − peso viejo)
+'''
+'''
+Version: 2.0
+Categoría del animal (ternero, novillito, novillo, toro / ternera, vaquillona, vaca): no se carga a mano, se calcula automáticamente a partir de sexo + peso + edad, usando los rangos ya definidos (ej. novillito 250-280kg al año, 340-380 promedio).
+Distribución automática a lotes: asignar animales a lotes según su peso actual, usando reglas que dependen del productor.
+'''
+'''
+Version: 3.0
+Definir % de engorde óptimo por lote y por sexo. 
+Comparar el engorde real de cada lote contra ese objetivo, para detectar si conviene ajustar alimentación o manejo. 
+Depende de supuestos que varían por productor, 
+así que es un análisis aparte montado sobre los datos del proyecto de pesadas, no una tarjeta más del mismo backlog.
+'''
