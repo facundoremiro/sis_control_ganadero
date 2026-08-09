@@ -30,3 +30,5 @@ Comparar el engorde real de cada lote contra ese objetivo, para detectar si conv
 Depende de supuestos que varían por productor, 
 así que es un análisis aparte montado sobre los datos del proyecto de pesadas, no una tarjeta más del mismo backlog.
 '''
+
+Utilizar sistema de SENASA para identificar varios productores, esto desde una pagina donde haya un sistema de login y cada productor se asigne su numero se SENASA
