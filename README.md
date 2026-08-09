@@ -11,7 +11,7 @@ sis_control_ganadero/
 │   ├── models/
 │   │   ├── __init__.py   (CURSOR, CONN compartidos, DB_PATH vía __file__)
 │   │   ├── animal.py
-│   │   └── pesada.py
+│   │   └── Reg_pesada.py
 
 TABLAS:
 - animales: caravana TEXT PRIMARY KEY, sexo TEXT, lote TEXT
