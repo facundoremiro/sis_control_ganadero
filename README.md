@@ -34,19 +34,6 @@ hay_animales() al inicio, y find_by_caravana() por cada caravana
 antes de guardar la pesada). Estoy armando el menú principal 
 (mensaje de bienvenida, "+" para animal nuevo, "=" para pesada).
 
-BACKLOG:
-✅ 0-3: proyecto de referencia, tablas, agregar animal, agregar pesada
-🔄 4: menú de consola (en progreso)
-⬜ 5: listar pesadas de una caravana
-⬜ 6: comparar dos pesadas (resta simple)
-⬜ 7: probar con datos ficticios
-⬜ 8: README
-
-CONVENCIONES YA ACORDADAS: separar setup_db.py de cli.py, checkear 
-antes de guardar (no try/except, porque SQLite no tira error solo), 
-fecha siempre en ISO internamente, guard clauses (continue/return) 
-en vez de else anidados.
-
 # Sistema de Control Ganadero
 
 CLI en Python para registrar el peso de animales de un rodeo a lo 
