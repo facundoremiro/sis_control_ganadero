@@ -30,4 +30,4 @@ python3 lib/setup.py        # menú para cargar datos
 \`\`\`
 
 ## Estado
-En desarrollo — MVP en construcción.
+En desarrollo, consultar ROADMAP.md para observar las futuras actualizaciones.
