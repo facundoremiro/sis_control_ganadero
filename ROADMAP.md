@@ -66,3 +66,38 @@ peso, etc.) + parser genérico — no un parser distinto por cada balanza.
 
 - Reporting: % de engorde óptimo por lote/sexo vs. objetivo del productor
 - Mapa del campo con carga de animales por lote (Folium u similar)
+## 🐄 Módulo Reproductivo (celo + preñez)
+
+Reemplaza y amplía la nota anterior de "Detección de celo" — se agrupa 
+todo el ciclo reproductivo del animal en un solo apartado, no como 
+funciones sueltas.
+
+### Carga
+- Celo detectado (caravana, fecha)
+- Servicio — monta natural o inseminación artificial (caravana, fecha, tipo)
+- Diagnóstico de preñez (caravana, fecha, resultado: preñada / vacía)
+- Fecha probable de parto (calculada a partir del servicio confirmado)
+
+### Visualización
+- Historial reproductivo completo por animal (celo → servicio → 
+  diagnóstico → parto)
+- Listado de animales próximos a parir
+- Listado de animales pendientes de diagnóstico (a tactar)
+
+### Métricas del rodeo
+- Tasa de preñez (% de servidas que quedaron preñadas)
+- Intervalo entre partos por animal
+
+## 🌾 Modelo de datos: lotes con hectáreas (calculo de la carga del campo)
+
+Se agrega tabla `lotes`, reemplazando el texto libre actual de 
+`animales.lote`:
+
+- lotes: nombre TEXT PRIMARY KEY, hectareas REAL
+
+`animales.lote` pasa de ser texto suelto a FK contra `lotes.nombre` — 
+mismo patrón que caravana → animales en la tabla pesadas.
+
+Con esto, "cantidad de animales por hectárea" en un lote se calcula 
+cruzando animales y lotes (JOIN: contar animales de ese lote, dividido 
+las hectáreas del lote).
