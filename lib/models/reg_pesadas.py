@@ -28,4 +28,12 @@ class Regpesadas:
         CURSOR.execute(sql, (self.caravana, self.fecha, self.peso, self.estado_corporal))
         CONN.commit()
         self.id = CURSOR.lastrowid
+    @classmethod
+    def mostrar_pesajes(cls):
+        sql = "SELECT * FROM reg_pesadas"
+        CURSOR.execute(sql)
+        print("Datos de animales y sus pesadas:")
+        for row in CURSOR.fetchall():
+            print(f"Caravana: {row[1]}, Fecha: {row[2]}, Peso: {row[3]}, Estado corporal: {row[4]}")
+    
 

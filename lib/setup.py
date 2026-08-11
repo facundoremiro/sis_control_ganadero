@@ -42,11 +42,56 @@ def cargar_pesadas():
         p.save()
 
 #if __name__ == "__main__": cargar_pesadas()
+print("Bienvenidos al sistema de control ganadero")
 
-print("Bienvenido al sistema de registro de pesadas, presiona + para agregar un animal nuevo, o = para registrar pesadas de animales existentes.")
-input_opcion = input("Ingrese su opción: ")
-if input_opcion == "+":
-    cargar_animal_nuevo()
-elif input_opcion == "=":
-    cargar_pesadas()
+while True:
+    print("\nPresione 1 para mostrar menu de animales, 2 para registrar pesadas, 3 para agregar un animal nuevo, o 4 para salir.")
+    input_opcion = input("Ingrese su opción: ")
+
+    if input_opcion == "1":
+        while True:
+            print("Menu de animales:")
+            print("1. Mostrar animales")
+            print("2. Mostrar pesajes")
+            print("3. Volver al menu principal")
+            opcion_animal = input("Ingrese su opción: ")
+            if opcion_animal == "1":
+                while True:
+                    print("Opciones para mostrar animales:")
+                    print("1. Todos, 2, por caravana, 3. por lote, 4. por sexo, 5. volver al menu principal")
+                    tipo = input("Ingrese su opción: ")
+                    if tipo == "1":
+                        Animal.mostrar_animales()
+                    elif tipo == "2":
+                        caravana = input("Ingrese la caravana del animal: ")
+                        Animal.mostrar_animales(caravana=caravana)
+                    elif tipo == "3":
+                        lote = input("Ingrese el lote del animal: ")
+                        Animal.mostrar_animales(lote=lote)
+                    elif tipo == "4":
+                        sexo = input("Ingrese el sexo del animal (M/H): ")
+                        Animal.mostrar_animales(sexo=sexo)
+                    elif tipo == "5":
+                        print("Volviendo al menu de animales...")
+                        break
+                    else:
+                        print("Opción inválida. Por favor, intente nuevamente.")
+            elif opcion_animal == "2":
+                Regpesadas.mostrar_pesajes()
+            elif opcion_animal == "3":
+                print("Volviendo al menu principal...")
+                break
+            else:
+                print("Opción inválida. Por favor, intente nuevamente.")
+    elif input_opcion == "2":
+        cargar_pesadas()
+    elif input_opcion == "3":
+        cargar_animal_nuevo()
+    elif input_opcion == "4":
+        print("Saliendo del sistema.")
+        break
+    else:
+        print("Opción inválida. Por favor, intente nuevamente.")
+    
+
 
