@@ -18,12 +18,12 @@ actualizando a medida que se avanza._
 
 ## 🔄 CLI - pendiente antes de lo visual
 
-- [ ] Listar pesadas de una caravana puntual
-- [ ] Listar todos los animales cargados (nuevo — sin decidir si es 
-      tarjeta propia o se resuelve solo por caravana)
+- [x] Listar pesadas de una caravana puntual
+- [x] Listar todos los animales cargados (se puede filtar por caravana, lote,   sexo, y ver todos)
+- [x] Listar todos los pesajes
+- [ ] Filtrar los pesajes listados (por fecha, caravana, lote, sexo)
 - [ ] Comparar dos pesadas (resta simple de peso)
 - [ ] Probar todo con datos ficticios (3-4 animales, varias pesadas c/u)
-- [ ] Actualizar README con el "cómo correrlo" real
 
 ## 🎨 CLI - checkpoints de lo visual
 
@@ -31,7 +31,7 @@ actualizando a medida que se avanza._
 - [ ] Ranking de animales por % ganado
 - [ ] Cerrar decisión de "lote" (texto libre vs. automático por peso — 
       inclinación actual: manual). Bloquea el filtro por lote.
-- [ ] Filtros de consulta (por caravana, por lote)
+- [x] Filtros de consulta (por caravana, por lote)
 - [ ] Mostrar resultados en tabla prolija de consola
 - [ ] Gráfico real (opcional — probablemente se resuelve directo en la web)
 

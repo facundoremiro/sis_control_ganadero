@@ -26,7 +26,7 @@ cd sis_control_ganadero
 
 python3 lib/create_db.py   # crea las tablas (una sola vez)
 
-python3 lib/setup.py        # menú para cargar datos
+python3 lib/setup.py        # menú para correr el programa
 \`\`\`
 
 ## Estado
