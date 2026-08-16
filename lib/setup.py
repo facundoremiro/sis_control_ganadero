@@ -45,7 +45,10 @@ def cargar_pesadas():
 print("Bienvenidos al sistema de control ganadero")
 
 while True:
-    print("\nPresione 1 para mostrar menu de animales, 2 para registrar pesadas, 3 para agregar un animal nuevo, o 4 para salir.")
+    print(" 1. Mostrar menu de animales" \
+    "\n 2. Registrar pesadas" \
+    "\n 3. Agregar un animal nuevo" \
+    "\n 4. Salir.")
     input_opcion = input("Ingrese su opción: ")
 
     if input_opcion == "1":
@@ -58,7 +61,11 @@ while True:
             if opcion_animal == "1":
                 while True:
                     print("Opciones para mostrar animales:")
-                    print("1. Todos, 2, por caravana, 3. por lote, 4. por sexo, 5. volver al menu principal")
+                    print("1. Todos " \
+                    "2. por caravana" \
+                    "3. por lote" \
+                    "4. por sexo" \
+                    "5. volver al menu principal")
                     tipo = input("Ingrese su opción: ")
                     if tipo == "1":
                         Animal.mostrar_animales()
@@ -77,7 +84,34 @@ while True:
                     else:
                         print("Opción inválida. Por favor, intente nuevamente.")
             elif opcion_animal == "2":
-                Regpesadas.mostrar_pesajes()
+                while True:
+                    print("Opciones para mostrar pesajes:")
+                    print(" 1. Todos "\
+                    "\n 2. por fecha" \
+                    "\n 3. por caravana" \
+                    "\n 4. por lote" \
+                    "\n 5. volver al menu principal"
+                    "\n 6. Mostrar ganancia de peso por animal")
+                    tipo = input("Ingrese su opción: ")
+                    if tipo == "1":
+                        Regpesadas.mostrar_pesajes()
+                    elif tipo == "2":
+                        fecha = input("Ingrese la fecha (año-mes-dia): ")
+                        Regpesadas.mostrar_pesajes(fecha=fecha)
+                    elif tipo == "3":
+                        caravana = input("Ingrese la caravana del animal: ")
+                        Regpesadas.mostrar_pesajes(caravana=caravana)
+                    elif tipo == "4":
+                        lote = input("Ingrese el lote del animal: ")
+                        Regpesadas.mostrar_pesajes(lote=lote)
+                    elif tipo == "6":
+                        caravana = input("Ingrese la caravana del animal:")
+                        Regpesadas.comparar_pesajes(caravana)
+                    elif tipo == "5":
+                        print("Volviendo al menu de animales...")
+                        break
+                    else:
+                        print("Opción inválida. Por favor, intente nuevamente.")
             elif opcion_animal == "3":
                 print("Volviendo al menu principal...")
                 break
